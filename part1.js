@@ -24,7 +24,6 @@ const part1 = (cb) => {
             }
         });
 
-        console.log(finalResult);
 
 
         // discipline
