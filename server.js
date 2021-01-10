@@ -19,7 +19,6 @@ part1((err, dataFromPart1) => {
                 console.error(err);
 
             else{
-                console.log(disciplineData);
                 part3({uniqueOperationList: dataFromPart1.uniqueOperationList, disciplineList});
             }
         });
