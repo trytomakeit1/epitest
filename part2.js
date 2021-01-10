@@ -8,7 +8,7 @@ const part2 = (disciplineIdList, cb) => {
 
     let axioCallList = [];
     for(let disciplineId of disciplineIdList) {
-        console.log('id: ', disciplineId);
+        //console.log('id: ', disciplineId);
         
         axioCallList.push(axios.get(disciplineUrl + disciplineId));
     }

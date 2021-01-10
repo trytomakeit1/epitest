@@ -7,6 +7,7 @@ const part1 = (cb) => {
 
     let operationList = [];
     let uniqueOperationId = [];
+    let uniqueOperationList = [];
     // call operation task
     axios.get(operationUrl).then(resultObj => {
         let operationResult = [...resultObj.data];
@@ -16,7 +17,7 @@ const part1 = (cb) => {
             operationList.push(element.operationType);
             
         });
-        let finalResult = operationList.filter(element => {
+        uniqueOperationList = operationList.filter(element => {
             if(!uniqueOperationId.includes(element.id)){
                 uniqueOperationId.push(element.id);
                 return element;
@@ -33,7 +34,7 @@ const part1 = (cb) => {
             if(!uniqueDisciplineId.includes(element.discipline))
                 uniqueDisciplineId.push(element.discipline);
         }
-        cb(null, uniqueDisciplineId);
+        cb(null, {uniqueOperationList, uniqueDisciplineId});
         
 
 
