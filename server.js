@@ -1,8 +1,10 @@
-let express = require('express');
-let app = express();
-let path = require('path');
+const express = require('express');
+const app = express();
+const path = require('path');
 const dotenv = require('dotenv').config();
 const part1 = require('./part1');
+const part2 = require('./part2');
+
 
 if(dotenv.error) {
     console.error('.env Problem', dotenv.error);
@@ -12,6 +14,13 @@ part1((err, disciplineIdList) => {
         console.error(err);
     else
         console.log(disciplineIdList);
+        part2(disciplineIdList, (err, disciplineData) => {
+            if(err)
+                console.error(err);
+            else
+                console.log(disciplineData);
+
+        });
 
 });
 //console.log(process.env);
